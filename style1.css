@@ -1,0 +1,61 @@
+/* 1. Bộ chọn cố định phông chữ cho trang HTML */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* 2. Đặt phân vùng cho trình đơn (chiều cao, đường viền, khoảng cách và màu nền) */
+#menu {
+    height: 40px;
+    background-color: #333333;
+    border-bottom: 2px solid #222222;
+}
+
+#menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* 3. Bộ chọn riêng cho các phần tử trong danh sách */
+#menu ul li {
+    float: left; /* Sắp xếp các mục theo hàng ngang */
+    position: relative; /* Cố định gốc tọa độ cho menu con */
+}
+
+/* 4. Bộ chọn dành cho các liên kết trong trình đơn */
+#menu ul li a {
+    display: block;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* 5. Chuyển màu nền của liên kết sang màu đỏ khi đưa con trỏ qua */
+#menu ul li a:hover {
+    background-color: #ff0000;
+}
+
+/* 6. Bộ chọn cho danh sách con (quy định vị trí và ẩn mặc định với visibility) */
+#menu ul ul {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    visibility: hidden; /* Mặc định ẩn trình đơn con */
+    background-color: #333333;
+}
+
+/* Định dạng các mục chọn nằm trong menu con hiển thị theo chiều dọc */
+#menu ul ul li {
+    float: none;
+}
+
+/* 7. Hiển thị danh sách con mỗi khi con trỏ được đưa qua mục chọn của trình đơn cha */
+#menu ul li:hover > ul {
+    visibility: visible;
+}
